@@ -19,9 +19,10 @@
     <title>Homepage</title>
 </head>
 <body>
-    
     <h1><?php echo "Sample PHP Web Application"; ?></h1>
+    <a href="add.html">Add New Data</a> <br/><br/>
 
+    
     <table>
         <tr bgcolor='#cccccc'>
             <td>Name</td>
