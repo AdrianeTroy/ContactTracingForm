@@ -3,7 +3,7 @@
      include_once("config.php");
 
     $result = mysqli_query($mysqli, "SELECT * FROM users");
-    
+
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +36,7 @@
                 echo "<td>".$res['age']."</td>";
                 echo "<td>".$res['email']."</td>";
                 echo "<td>".$res['date_created']."</td>";
-                echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a>";
+                echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a> | <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Are you sure you want to delete this record?')\">Delete</a></td>";
                 echo "</tr>";
             }
         ?>
