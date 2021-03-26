@@ -1,13 +1,9 @@
 <?php
 
-    $dbhost = 'localhost:3301';
-    $dbname = 'test';
-    $dbuser = 'root';
-    $dbpass = '';
-    $conn = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+     include_once("config.php");
 
-    $result = mysqli_query($conn, "SELECT * FROM users");
-
+    $result = mysqli_query($mysqli, "SELECT * FROM users");
+    
 ?>
 
 <!DOCTYPE html>
@@ -22,13 +18,14 @@
     <h1><?php echo "Sample PHP Web Application"; ?></h1>
     <a href="add.html">Add New Data</a> <br/><br/>
 
-    
+
     <table>
         <tr bgcolor='#cccccc'>
             <td>Name</td>
             <td>Age</td>
             <td>Email</td>
             <td>Date Created</td>
+            <td>Update</td>
         </tr>
 
         <?php
@@ -39,6 +36,7 @@
                 echo "<td>".$res['age']."</td>";
                 echo "<td>".$res['email']."</td>";
                 echo "<td>".$res['date_created']."</td>";
+                echo "<td><a href=\"edit.php?id=$res[id]\">Edit</a>";
                 echo "</tr>";
             }
         ?>

@@ -1,3 +1,8 @@
+<?php
+ include_once("config.php");
+ 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +12,6 @@
     <title>Add Script</title>
 </head>
 <body>
-<?php
-
-    $dbhost = 'localhost:3301';
-    $dbname = 'test';
-    $dbuser = 'root';
-    $dbpass = '';
-    $mysqli = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
-?>
-
 <?php 
     if(isset($_POST['submit'])) {
         $name = mysqli_real_escape_string($mysqli, $_POST['name']);
