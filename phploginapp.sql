@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 
-CREATE TABLE `users`
+CREATE TABLE `users1`
 ( `id` INT NOT NULL AUTO_INCREMENT ,
  `name` VARCHAR(255) NOT NULL , 
  `email` VARCHAR(255) NOT NULL ,
