@@ -1,8 +1,18 @@
 <?php
 
-    include_once("config.php");
+  //initialize session
+  session_start();
 
-    $result = mysqli_query($mysqli, "SELECT * FROM users");
+  if( !isset($_SESSION['email']) || empty($_SESSION['email'])){
+    header('location: login.php');
+    exit;
+  }
+?>
+<?php
+
+include_once("config.php");
+
+$result = mysqli_query($mysqli, "SELECT * FROM users");
 
 ?>
 
@@ -22,12 +32,17 @@
         text-align: center;
         background-color:#cccccc;
     }
+    .welcome {
+      font-size: 20px;
+    }
 </style>
 <body class="bg-primary">
     <div class="container">
         <div class="row">
             <div class="col">
                 <div class="card card-body bg-light mt-5">
+                  <p class="welcome">Welcome to the dashboard, <b>Admin</b>!</p>
+                  <p><a href="logout.php" class="btn btn-danger btn-sm">Logout</a></p>
                     <h1 class="text-center"><?php echo "Contact Tracing Form"; ?></h1><br/>
                         <table class="table">
                             <tr class="tr1">
